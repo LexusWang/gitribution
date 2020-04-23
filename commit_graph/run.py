@@ -13,6 +13,9 @@ def main():
 	result_2 = '../dataset/result-post.csv'
 	commit_dict = graph_construction(data_file1, data_file2, graph_file)
 	graph_dict = graph_initialize(commit_dict)
+	# for key in graph_dict.keys():
+	# 	for dest in graph_dict[key]['ancestors']:
+	# 		print(key+','+dest)
 	graph_stastic(graph_dict)
 	Author_dict, Author_contribution = add_by_Author(graph_dict, commit_dict)
 	Author_contribution = dict_normalization(Author_contribution)
